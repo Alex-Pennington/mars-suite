@@ -3,7 +3,7 @@ Core signal processing functionality for MARS Suite.
 """
 
 import numpy as np
-from typing import Optional
+from typing import Optional, Tuple
 
 
 class SignalProcessor:
@@ -60,7 +60,7 @@ class SignalProcessor:
         window = window_funcs[window_type](len(signal))
         return signal * window
     
-    def compute_fft(self, signal: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    def compute_fft(self, signal: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
         """
         Compute the FFT of a signal.
         
