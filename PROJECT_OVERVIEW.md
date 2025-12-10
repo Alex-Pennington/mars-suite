@@ -12,7 +12,7 @@ That modem is MIL-STD-188-110A.
 
 Before we can test MELP-e voice, we need to verify that our MIL-STD-188-110A modem implementation actually works — that it can successfully exchange data with other 110A modems in the wild.
 
-The most widely-used amateur/MARS implementation is Paul Brain's Cm110s modem core, which powers AF-DM (Air Force Digital Modem), MS-DMT (by Steve Hajducek), and other tools. Steve Hajducek's work on MS-DMT is what originally brought this project to our attention and set us on this path. If Phoenix Nest's modem can talk to Brain's modem, it can talk to most of the 110A ecosystem.
+The most widely-used amateur/MARS implementation is Paul Brain's Cm110s modem core, which powers AF-DM (Air Force Digital Modem), MS-DMT (by Steve Hajducek, N2CKH), and other tools. Steve Hajducek's work on MS-DMT is what originally brought this project to our attention and set us on this path. If Phoenix Nest's modem can talk to Brain's modem, it can talk to most of the 110A ecosystem.
 
 **The interoperability requirement:**
 - Phoenix Nest TX → Brain RX: Must decode correctly
@@ -233,7 +233,7 @@ Contact: alex.pennington@organicengineer.com
 ## Credits
 
 - **Paul Brain** — Original Cm110s MIL-STD-188-110A modem core
-- **Steve Hajducek** — MS-DMT, whose work set us on this path
+- **Steve Hajducek (N2CKH)** — MS-DMT, whose work set us on this path
 - **Perry (AFA4NQ)** — AF-DM GUI wrapper
 - **Phoenix Nest LLC** — brain_core server, mars-suite, MELP-e integration
 
