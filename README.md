@@ -3,148 +3,87 @@
 Open-source HF digital communications tools for Military Auxiliary Radio System (MARS) operations.
 
 **Developer:** Alex Pennington (KY4OLB, formerly AAR4TE / NNN0VO)  
-**Project Site:** [www.organicengineer.com/projects](https://www.organicengineer.com/projects)  
+**Project Site:** [www.organicengineer.com](https://www.organicengineer.com)  
 **Contact:** projects@organicengineer.com
 
 ---
+
+## Overview
+
+The Phoenix Nest MARS Suite is an open-source implementation of MIL-STD-188-110A HF modem with MELP-e voice codec support. This project provides amateur radio operators and MARS members with professional-grade digital communications tools without licensing costs.
 
 ## Repositories
 
 | Repository | Description | Status |
 |------------|-------------|--------|
-| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 11 modes, turbo EQ, MS-DMT compatible | ✅ v1.2.0 |
+| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 11 modes, turbo EQ, MS-DMT compatible | ✅ Active |
 | [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper, Crypto, Propagation | ✅ Building |
-| [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Paul Brain modem core (reference implementation for testing) | ✅ v1.0.0 |
+| [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem core (reference implementation for testing) | ✅ Reference |
 | [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project for FEMA region map generation | ✅ Working |
-| [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | SDRplay RSP2 Pro integration - I/Q capture for modem testing | ✅ v0.1.0 |
----
 
-## How It Fits Together
+## Features
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│  OPERATOR                                                       │
-│      │                                                          │
-│      ▼                                                          │
-│  Station Mapper ◄─────────────────────────── MARS_GIS          │
-│  (phoenix_nest_mars/src/smlinux)              (map images)      │
-│      │                                                          │
-│      │ V3PROTOCOL (XML/TCP)                                     │
-│      ▼                                                          │
-│  Communications Processor (CP)                                  │
-│  (phoenix_nest_mars/src/cp)                                     │
-│      │                                                          │
-│      │ MS-DMT Protocol (TCP 4998/4999)                         │
-│      ▼                                                          │
-│  ┌─────────────────────┐     ┌─────────────────────┐           │
-│  │ pennington_m110a    │ OR  │ brain_core          │           │
-│  │ (Phoenix Nest)      │     │ (Paul Brain)        │           │
-│  │ TCP 4998/4999/5000  │     │ TCP 3998/3999       │           │
-│  └──────────┬──────────┘     └──────────┬──────────┘           │
-│             │                           │                       │
-│             └───────────┬───────────────┘                       │
-│                         ▼                                       │
-│                    AUDIO / RADIO                                │
-└────────────────────────────────────────────────────────────────┘
-```
-
-**Runtime Flow:**
-1. Start modem server (`pennington_m110a` or `brain_core`)
-2. Start CP - connects to modem via MS-DMT protocol
-3. Start Station Mapper - connects to CP via V3PROTOCOL
-4. Operator uses Station Mapper for NCS operations
-
-**The modems are interchangeable** - both implement MS-DMT protocol so CP doesn't care which is running.
+- Full MIL-STD-188-110A implementation (all 11 waveform modes)
+- MELP-e voice codec support
+- MS-DMT protocol compatibility for interoperability testing
+- Cross-modem validation using brain_core reference implementation
+- Advanced frequency correction and wideband AFC
 
 ---
 
-## Quick Start
+## Development Methodology & AI Assistance
 
-### Option A: Phoenix Nest Modem (recommended)
-```bash
-git clone https://github.com/Alex-Pennington/pennington_m110a_demod
-cd pennington_m110a_demod
-.\build.ps1 -Target all
-.\server\m110a_server.exe
-```
+This project was developed using AI-assisted coding tools. In the interest of transparency, here's what that means:
 
-### Option B: Paul Brain Modem (reference)
-```bash
-git clone https://github.com/Alex-Pennington/brain_core
-cd brain_core
-.\build.ps1
-.\brain_modem_server.exe
-```
+### AI Tools Used
 
-### Start MARS Operations Suite
-```bash
-git clone https://github.com/Alex-Pennington/phoenix_nest_mars
-cd phoenix_nest_mars/src/cp
-qmake CP-standalone.pro && make
-./CP
+| Tool | Purpose | Investment |
+|------|---------|------------|
+| Claude Pro (Anthropic) | Architecture, DSP algorithms, documentation, code review | ~$40 |
+| GitHub Copilot | In-editor code completion and suggestions | $400 |
+| Claude API | Automated testing and integration workflows | $50 |
+| **Total** | | **~$490** |
 
-# In another terminal:
-cd ../smlinux
-qmake StationMapper-linux.pro && make
-./StationMapper
-```
+### What AI Did vs. What I Did
 
----
+**AI accelerated:**
+- Boilerplate code generation
+- Documentation drafting
+- Algorithm implementation from specifications
+- Code refactoring and optimization suggestions
+- Test case generation
 
-## Component Details
+**Human expertise required:**
+- MIL-STD-188-110A domain knowledge (the AI doesn't know this standard)
+- Architecture decisions and design choices
+- Validation against real RF signals
+- Integration with existing MARS infrastructure
+- 35 years of programming experience directing the work
 
-### pennington_m110a_demod
-Full MIL-STD-188-110A implementation:
-- All 11 data modes (75-4800 bps)
-- 7 equalizer options including Turbo EQ
-- Web-based test GUI
-- MS-DMT compatible TCP server
-- GPL-3.0 license
+The AI doesn't know MIL-STD-188-110A from a ham sandwich. What it *can* do is rapidly implement algorithms once you explain them, catch bugs, and handle the tedious parts. The domain expertise, the "what to build and why," and the validation — that's still entirely human.
 
-### phoenix_nest_mars
-Integrated MARS operations:
-- **CP** - Message formatting, traffic routing
-- **Station Mapper** - NCS visualization, roster management  
-- **Crypto** - KIK/TEK key tape management
-- **Propagation** - VOACAP coverage prediction
+### Why Disclose This?
 
-### brain_core
-Paul Brain's original m188110a modem:
-- Wrapped as headless TCP server
-- Used for comparison/interop testing
-- Reference implementation
-
-### MARS_GIS
-QGIS project for map generation:
-- FEMA region boundaries
-- Station coverage areas
-- Export images for Station Mapper
+1. **Transparency** — Other developers should know how this was built
+2. **Reproducibility** — Similar projects can estimate their own AI tooling costs  
+3. **Honest expectations** — AI coding assistance is powerful but not magic; it still requires domain expertise to direct effectively
 
 ---
 
-## Standards & Protocols
+## Getting Started
 
-| Standard | Description |
-|----------|-------------|
-| MIL-STD-188-110A | HF data modem (75-4800 bps) |
-| MIL-STD-188-110B/C | Updated modem specs |
-| STANAG 4539 | NATO equivalent |
-| MS-DMT | MARS Digital Modem Terminal protocol |
-| V3PROTOCOL | Station Mapper ↔ CP communication |
-
----
-
-## Support Development
-
-- **GitHub Sponsors:** [github.com/sponsors/Alex-Pennington](https://github.com/sponsors/Alex-Pennington)
-- **ARDC Grant:** Application in progress
-
----
+See individual repository READMEs for installation and usage instructions.
 
 ## License
 
-Each repository has its own license - see individual repos for details.
+This project is open source. See LICENSE file in each repository for specific terms.
+
+## Acknowledgments
+
+- **Steve Hajducek (N2CKH)** — MS-DMT, MARS-ALE, Chief Navy MARS staff for ALE/MIL-STD development, introduction to this project space
+- **Charles Brain (G4GUO)** — brain_core reference implementation, PC-ALE
+- The MARS community
 
 ---
 
-*Phoenix Nest LLC — Supporting MARS operations through open-source development*
+*Last updated: December 2025*
