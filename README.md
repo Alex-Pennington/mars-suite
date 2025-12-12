@@ -16,18 +16,47 @@ The Phoenix Nest MARS Suite is an open-source implementation of MIL-STD-188-110A
 
 | Repository | Description | Status |
 |------------|-------------|--------|
-| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 11 modes, turbo EQ, MS-DMT compatible | ✅ Active |
+| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes, turbo EQ, MS-DMT compatible | ✅ Active |
+| [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | SDRplay RSP2 Pro integration - I/Q capture for direct SDR receive | ✅ Active |
 | [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper, Crypto, Propagation | ✅ Building |
 | [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem core (reference implementation for testing) | ✅ Reference |
 | [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project for FEMA region map generation | ✅ Working |
 
 ## Features
 
-- Full MIL-STD-188-110A implementation (all 11 waveform modes)
-- MELP-e voice codec support
+- Full MIL-STD-188-110A implementation (all 12 waveform modes)
+- **Direct SDR receive** via SDRplay RSP2 Pro (I/Q input at 2 MSPS)
+- MELP-e voice codec support (Codec2 open-source alternative included)
 - MS-DMT protocol compatibility for interoperability testing
 - Cross-modem validation using brain_core reference implementation
 - Advanced frequency correction and wideband AFC
+
+---
+
+## Beta Testing
+
+Want to help test? See the [Beta Testing Guide](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/BETA_TESTING_GUIDE.md) for instructions on testing the receive chain with your own SDRplay hardware.
+
+**What you need:**
+- SDRplay RSP2 Pro (or compatible)
+- Windows 10/11 PC
+- Signal source (MSDMT, QTMSDMT, or over-the-air 110A signals)
+
+**Test scenarios:**
+1. **Local loopback** - MSDMT TX → audio → Phoenix Nest RX
+2. **RF loopback** - MSDMT TX → radio → SDR → Phoenix Nest RX
+3. **Over-the-air** - Capture real 110A signals from MARS nets
+
+---
+
+## Quick Links
+
+| Document | Description |
+|----------|-------------|
+| [Modem README](https://github.com/Alex-Pennington/pennington_m110a_demod/blob/master/README.md) | Main modem documentation |
+| [SDR README](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/README.md) | SDRplay integration docs |
+| [Beta Testing Guide](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/BETA_TESTING_GUIDE.md) | Step-by-step testing instructions |
+| [I/Q Integration Design](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/IQ_INPUT_DESIGN.md) | Technical design for SDR→modem interface |
 
 ---
 
