@@ -16,7 +16,7 @@ Open-source HF digital communications tools for Military Auxiliary Radio System 
 | [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper, Crypto, Propagation | ✅ Building |
 | [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Paul Brain modem core (reference implementation for testing) | ✅ v1.0.0 |
 | [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project for FEMA region map generation | ✅ Working |
-
+| [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | SDRplay RSP2 Pro integration - I/Q capture for modem testing | ✅ v0.1.0 |
 ---
 
 ## How It Fits Together
