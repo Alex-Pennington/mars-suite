@@ -95,34 +95,51 @@ Want to help test? See the [Beta Testing Guide](https://github.com/Alex-Penningt
 | [SDR README](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/README.md) | SDRplay integration docs |
 | [Beta Testing Guide](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/BETA_TESTING_GUIDE.md) | Step-by-step testing instructions |
 | [I/Q Integration Design](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/IQ_INPUT_DESIGN.md) | Technical design for SDR→modem interface |
-| [SDR Integration Pathway](https://github.com/Alex-Pennington/pennington_m110a_demod/blob/feature/sdrplay-integration/docs/SDRPlay_Integration_Pathway.md) | Integration roadmap and status |
 
 ---
 
-## Development Methodology & AI Assistance
+## Development Cost Tracking
 
-This project was developed using AI-assisted coding tools. In the interest of transparency, here's what that means:
+This project was developed using AI-assisted coding tools. In the interest of transparency, here's the running cost breakdown:
 
-### AI Tools Used
+### Subscription Costs (3 months: Oct-Dec 2025)
 
-| Tool | Purpose | Investment |
-|------|---------|------------|
-| Claude Pro (Anthropic) | Architecture, DSP algorithms, documentation, code review | ~$40 |
-| GitHub Copilot | In-editor code completion and suggestions | $400 |
-| Claude API | Automated testing and integration workflows | $50 |
-| **Total** | | **~$490** |
+| Subscription | Monthly | 3 Months |
+|--------------|---------|----------|
+| Claude Max | $100 | $300 |
+| GitHub Copilot | $50 | $150 |
+| **Subtotal** | | **$450** |
 
-### What AI Did vs. What I Did
+*Note: Claude Max occasionally requires $5-10 overage bumps to maintain usage limits.*
 
-**AI accelerated:**
+### API/Usage Costs by Component
+
+| Component | Repository | Cost | Notes |
+|-----------|------------|------|-------|
+| **Pennington Modem Core** | pennington_m110a_demod | $150 | Full 110A implementation, 12 modes |
+| **SDRplay Integration** | phoenix_sdr | $50 | RSP2 Pro interface, I/Q pipeline |
+| **Brain Core Wrapper** | brain_core | $20 | TCP/IP wrapper for reference modem |
+| **HF Channel Simulator** | (in modem repo) | $5 | Watterson model, CCIR presets |
+| **Subtotal** | | **$225** | |
+
+### Total Investment
+
+| Category | Amount |
+|----------|--------|
+| Subscriptions (3 months) | $450 |
+| API/Usage Costs | $225 |
+| **Grand Total** | **$675+** |
+
+### What AI Does vs. Human Expertise
+
+**AI accelerates:**
 - Boilerplate code generation
 - Documentation drafting
 - Algorithm implementation from specifications
-- Code refactoring and optimization suggestions
-- Test case generation
+- Code refactoring and test generation
 
 **Human expertise required:**
-- MIL-STD-188-110A domain knowledge (the AI doesn't know this standard)
+- MIL-STD-188-110A domain knowledge (AI doesn't know this standard)
 - Architecture decisions and design choices
 - Validation against real RF signals
 - Integration with existing MARS infrastructure
@@ -130,11 +147,11 @@ This project was developed using AI-assisted coding tools. In the interest of tr
 
 The AI doesn't know MIL-STD-188-110A from a ham sandwich. What it *can* do is rapidly implement algorithms once you explain them, catch bugs, and handle the tedious parts. The domain expertise, the "what to build and why," and the validation — that's still entirely human.
 
-### Why Disclose This?
+### Why Track This?
 
 1. **Transparency** — Other developers should know how this was built
 2. **Reproducibility** — Similar projects can estimate their own AI tooling costs  
-3. **Honest expectations** — AI coding assistance is powerful but not magic; it still requires domain expertise to direct effectively
+3. **Honest expectations** — AI coding assistance is powerful but not magic
 
 ---
 
