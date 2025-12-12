@@ -8,6 +8,19 @@ Open-source HF digital communications tools for Military Auxiliary Radio System 
 
 ---
 
+## Current Status (December 2025)
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| **MIL-STD-188-110A Modem** | ✅ Ready | All 12 modes, cross-modem validated |
+| **SDR I/Q Pipeline** | ✅ Ready | 31/31 tests passing, awaiting real-world captures |
+| **phoenix_sdr (SDRplay)** | ✅ Ready | RSP2 Pro interface, .iqr recording |
+| **Beta Testing** | 🟡 Open | Looking for testers with SDRplay hardware |
+
+**Next Milestone:** Real-world OTA signal capture and decode validation
+
+---
+
 ## Overview
 
 The Phoenix Nest MARS Suite is an open-source implementation of MIL-STD-188-110A HF modem with MELP-e voice codec support. This project provides amateur radio operators and MARS members with professional-grade digital communications tools without licensing costs.
@@ -18,7 +31,7 @@ The Phoenix Nest MARS Suite is an open-source implementation of MIL-STD-188-110A
 |------------|-------------|--------|
 | [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes, turbo EQ, MS-DMT compatible | ✅ Active |
 | [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | SDRplay RSP2 Pro integration - I/Q capture for direct SDR receive | ✅ Active |
-| [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper, Crypto, Propagation | ✅ Building |
+| [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper, Crypto, Propagation | 🔨 Building |
 | [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem core (reference implementation for testing) | ✅ Reference |
 | [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project for FEMA region map generation | ✅ Working |
 
@@ -30,6 +43,31 @@ The Phoenix Nest MARS Suite is an open-source implementation of MIL-STD-188-110A
 - MS-DMT protocol compatibility for interoperability testing
 - Cross-modem validation using brain_core reference implementation
 - Advanced frequency correction and wideband AFC
+
+---
+
+## I/Q Pipeline Status
+
+The SDR receive chain is validated and ready:
+
+```
+SDRplay RSP2 Pro → phoenix_sdr → .iqr file → IQFileSource → IQSource → Demodulator
+     (2 MSPS)                                              (decimate)    (48 kHz)
+```
+
+**Test Results:**
+| Test Suite | Pass | Total |
+|------------|------|-------|
+| IQSource format conversion | 10 | 10 |
+| IQFileSource .iqr loading | 11 | 11 |
+| I/Q pipeline loopback | 10 | 10 |
+| **Total** | **31** | **31** |
+
+**What's Proven:**
+- Signal amplitude preserved (rms_ratio = 1.00)
+- int16 quantization quality (82.2 dB SNR)
+- Format consistency (planar == interleaved)
+- .iqr file round-trip integrity
 
 ---
 
@@ -57,6 +95,7 @@ Want to help test? See the [Beta Testing Guide](https://github.com/Alex-Penningt
 | [SDR README](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/README.md) | SDRplay integration docs |
 | [Beta Testing Guide](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/BETA_TESTING_GUIDE.md) | Step-by-step testing instructions |
 | [I/Q Integration Design](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/IQ_INPUT_DESIGN.md) | Technical design for SDR→modem interface |
+| [SDR Integration Pathway](https://github.com/Alex-Pennington/pennington_m110a_demod/blob/feature/sdrplay-integration/docs/SDRPlay_Integration_Pathway.md) | Integration roadmap and status |
 
 ---
 
@@ -115,4 +154,4 @@ This project is open source. See LICENSE file in each repository for specific te
 
 ---
 
-*Last updated: December 2025*
+*Last updated: December 12, 2025*
