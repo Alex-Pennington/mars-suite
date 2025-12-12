@@ -12,7 +12,7 @@ That modem is MIL-STD-188-110A.
 
 Before we can test MELP-e voice, we need to verify that our MIL-STD-188-110A modem implementation actually works — that it can successfully exchange data with other 110A modems in the wild.
 
-The most widely-used amateur/MARS implementation is Paul Brain's Cm110s modem core, which powers AF-DM (Air Force Digital Modem), MS-DMT (by Steve Hajducek, N2CKH), and other tools. Steve Hajducek's work on MS-DMT is what originally brought this project to our attention and set us on this path. If Phoenix Nest's modem can talk to Brain's modem, it can talk to most of the 110A ecosystem.
+The most widely-used amateur/MARS implementation is Charels Brain's Cm110s modem core, which powers AF-DM (Air Force Digital Modem), MS-DMT (by Steve Hajducek, N2CKH), and other tools. Steve Hajducek's work on MS-DMT is what originally brought this project to our attention and set us on this path. If Phoenix Nest's modem can talk to Brain's modem, it can talk to most of the 110A ecosystem.
 
 **The interoperability requirement:**
 - Phoenix Nest TX → Brain RX: Must decode correctly
@@ -39,7 +39,7 @@ This made systematic software verification impossible.
 
 ### brain_core — Headless Server with RX Inject
 
-We took Paul Brain's Cm110s modem library (the same DSP core that AF-DM uses) and wrapped it in a headless TCP server. No GUI, no soundcard dependencies — just a network interface for control and data.
+We took Charels Brain's Cm110s modem library (the same DSP core that AF-DM uses) and wrapped it in a headless TCP server. No GUI, no soundcard dependencies — just a network interface for control and data.
 
 **The key addition: `CMD:RXAUDIOINJECT:<path>`**
 
@@ -212,7 +212,7 @@ mars-suite/
 └── README.md
 
 brain_core/
-├── m188110a/            # Paul Brain's Cm110s library
+├── m188110a/            # Charels Brain's Cm110s library
 ├── src/                 # TCP server wrapper
 ├── tx_pcm_out/          # TX audio captures
 ├── loopback_test.py     # Self-test script
@@ -232,7 +232,7 @@ Contact: alex.pennington@organicengineer.com
 
 ## Credits
 
-- **Paul Brain** — Original Cm110s MIL-STD-188-110A modem core
+- **Charels Brain** — Original Cm110s MIL-STD-188-110A modem core
 - **Steve Hajducek (N2CKH)** — MS-DMT, whose work set us on this path
 - **Perry (AFA4NQ)** — AF-DM GUI wrapper
 - **Phoenix Nest LLC** — brain_core server, mars-suite, MELP-e integration
