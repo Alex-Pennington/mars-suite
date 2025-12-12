@@ -12,10 +12,9 @@ This project was built with significant AI assistance. Here's an honest accounti
 
 | Category | Tool | Duration/Usage | Cost |
 |----------|------|----------------|------|
-| Conversational AI | Claude Pro | ~2 months (Oct-Dec 2025) | ~$40 |
-| Code Completion | GitHub Copilot | ~1 year of development | $400 |
+| Conversational AI | Claude Pro | ~2 months (Oct-Dec 2025) | ~$150 |
+| Conversational AI and Agent Code Creation | GitHub Copilot | ~1 year of development | $400 |
 | API Integration | Claude API | Testing/automation workflows | $50 |
-| **Total AI Tooling** | | | **~$490** |
 
 ### The Human-AI Division of Labor
 
