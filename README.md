@@ -34,6 +34,7 @@ The Phoenix Nest MARS Suite is an open-source implementation of MIL-STD-188-110A
 | [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper, Crypto, Propagation | 🔨 Building |
 | [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem core (reference implementation for testing) | ✅ Reference |
 | [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project for FEMA region map generation | ✅ Working |
+| [**MARS-History-Project**](https://github.com/Alex-Pennington/MARS-History-Project) | SME Interview System - AI-powered knowledge capture from HF experts | ✅ Active |
 
 ## Features
 

@@ -14,8 +14,7 @@ This is a **documentation and coordination hub** for the Phoenix Nest MARS Commu
 | `phoenix_sdr` | SDRplay RSP2 Pro integration for I/Q capture |
 | `brain_core` | Charles Brain's Cm110s modem wrapped as TCP server (reference) |
 | `phoenix_nest_mars` | MARS operations suite (under development) |
-| `MARS_GIS` | QGIS project for FEMA region maps |
-
+| `MARS_GIS` | QGIS project for FEMA region maps || `MARS-History-Project` | SME Interview System - AI-powered knowledge capture from HF experts |
 ## Key Technical Parameters
 
 When working on modem-related documentation or specifications:
