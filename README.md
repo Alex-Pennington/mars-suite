@@ -73,17 +73,27 @@ SDRplay RSP2 Pro → phoenix_sdr → .iqr file → IQFileSource → IQSource →
 
 ## Beta Testing
 
-Want to help test? See the [Beta Testing Guide](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/BETA_TESTING_GUIDE.md) for instructions on testing the receive chain with your own SDRplay hardware.
+Want to help test? See the [Beta Testing Guide](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/BETA_TESTING_GUIDE.md) for instructions.
+
+**Current Focus:** WWV tick detection — validates SDR capture chain before modem integration.
 
 **What you need:**
 - SDRplay RSP2 Pro (or compatible)
 - Windows 10/11 PC
-- Signal source (MSDMT, QTMSDMT, or over-the-air 110A signals)
+- SDRplay API v3.x installed
+- HF antenna (any antenna that can receive 5-15 MHz)
 
-**Test scenarios:**
-1. **Local loopback** - MSDMT TX → audio → Phoenix Nest RX
-2. **RF loopback** - MSDMT TX → radio → SDR → Phoenix Nest RX
-3. **Over-the-air** - Capture real 110A signals from MARS nets
+**Quick start (tune slightly off-center to avoid DC hole):**
+```powershell
+# 5 MHz (night) | 10 MHz (day) | 15 MHz (daytime long distance)
+cmd /c ".\bin\simple_am_receiver.exe -f 5.000450 -g 59 -l 0 -o | .\bin\waterfall.exe"
+```
+
+**What validates success:**
+- Ticks detected every ~1000ms (950-1050ms acceptable)
+- Purple flash on bar 5 (1000 Hz) with each tick
+- Average interval converging to 1000ms
+- Note: Seconds 29 and 59 have NO tick (intentional WWV gap)
 
 ---
 
