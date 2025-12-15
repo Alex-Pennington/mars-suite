@@ -12,9 +12,10 @@ Open-source HF digital communications tools for Military Auxiliary Radio System 
 
 | Component | Status | Notes |
 |-----------|--------|-------|
-| **MIL-STD-188-110A Modem** | ✅ Ready | All 12 modes, cross-modem validated |
-| **SDR I/Q Pipeline** | ✅ Ready | 31/31 tests passing, awaiting real-world captures |
-| **phoenix_sdr (SDRplay)** | ✅ Ready | RSP2 Pro interface, .iqr recording |
+| **MIL-STD-188-110A Modem** | ✅ v1.6.1 | Build 325, cross-modem interop validated |
+| **SDR I/Q Pipeline** | ✅ v0.3.0 | WWV tick detection working, 31/31 tests passing |
+| **phoenix_sdr (SDRplay)** | ✅ Ready | RSP2 Pro interface, split-screen waterfall |
+| **SDR Controller GUI** | ✅ v0.3.0 | Windows TCP control interface |
 | **Beta Testing** | 🟡 Open | Looking for testers with SDRplay hardware |
 
 **Next Milestone:** Real-world OTA signal capture and decode validation
@@ -29,12 +30,13 @@ The Phoenix Nest MARS Suite is an open-source implementation of MIL-STD-188-110A
 
 | Repository | Description | Status |
 |------------|-------------|--------|
-| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes, turbo EQ, MS-DMT compatible | ✅ Active |
-| [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | SDRplay RSP2 Pro integration - I/Q capture for direct SDR receive | ✅ Active |
-| [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper, Crypto, Propagation | 🔨 Building |
-| [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem core (reference implementation for testing) | ✅ Reference |
-| [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project for FEMA region map generation | ✅ Working |
-| [**MARS-History-Project**](https://github.com/Alex-Pennington/MARS-History-Project) | SME Interview System - AI-powered knowledge capture from HF experts | ✅ Active |
+| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes, turbo EQ, MS-DMT compatible | ✅ v1.6.1 b325 |
+| [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | SDRplay RSP2 Pro integration - WWV tick detection, waterfall display | ✅ v0.3.0+1 |
+| [**phoenix_sdr_controller**](https://github.com/Alex-Pennington/phoenix_sdr_controller) | SDL2 Windows GUI for TCP SDR control - presets, DC offset | ✅ v0.3.0 |
+| [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Propagation (voacapl), Station Mapper | 🔨 Building |
+| [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem TCP server (ports 3998/3999) | ✅ Reference |
+| [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS Python scripts for FEMA region map generation | ✅ Active |
+| [**MARS-History-Project**](https://github.com/Alex-Pennington/MARS-History-Project) | SME Interview System v1.0.0 - Flask/Claude AI/Google TTS | ✅ v1.0.0 |
 
 ## Features
 
@@ -182,4 +184,4 @@ This project is open source. See LICENSE file in each repository for specific te
 
 ---
 
-*Last updated: December 12, 2025*
+*Last updated: December 15, 2025*
