@@ -61,7 +61,11 @@ The AI is a powerful tool, but it's still a tool. The developer's experience and
 See individual repository documentation:
 
 - [Modem Architecture](https://github.com/Alex-Pennington/pennington_m110a_demod/blob/master/README.md)
-- [SDR Integration Design](https://github.com/Alex-Pennington/phoenix_sdr/blob/main/docs/IQ_INPUT_DESIGN.md)
+- [SDR Core](https://github.com/Alex-Pennington/phoenix-sdr-core/blob/main/README.md)
+- [WWV Detection](https://github.com/Alex-Pennington/phoenix-wwv/blob/main/README.md)
+- [Waterfall Display](https://github.com/Alex-Pennington/phoenix-waterfall/blob/main/README.md)
+- [Network Streaming](https://github.com/Alex-Pennington/phoenix-sdr-net/blob/main/README.md)
+- [Reference Library](https://github.com/Alex-Pennington/phoenix-reference-library/blob/main/README.md)
 
 ---
 
