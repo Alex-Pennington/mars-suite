@@ -88,25 +88,28 @@ The Phoenix SDR system has been split into focused, modular repositories:
 
 | Repository | Description | Status |
 |------------|-------------|--------|
-| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes, turbo EQ, MS-DMT compatible | ✅ v1.6.1 b325 |
-| [**phoenix_sdr_controller**](https://github.com/Alex-Pennington/phoenix_sdr_controller) | SDL2 Windows GUI for TCP SDR control - presets, DC offset | ✅ v0.3.0 |
-| [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Propagation (voacapl), Station Mapper | 🔨 Building |
-| [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem TCP server (ports 3998/3999) | ✅ Reference |
-| [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS Python scripts for FEMA region map generation | ✅ Active |
-| [**MARS-History-Project**](https://github.com/Alex-Pennington/MARS-History-Project) | SME Interview System v1.0.0 - Flask/Claude AI/Google TTS | ✅ v1.0.0 |
+| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes (75-4800 bps), turbo EQ, SDR I/Q input, cross-modem validated | ✅ v1.6.1 b325 |
+| [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | 🗄️ ARCHIVED - Monolith split into 7 modular repos (see phoenix-* above) | 📦 v0.3.0 |
+| [**hf-modem-rpi4**](https://github.com/Alex-Pennington/hf-modem-rpi4) | Raspberry Pi 4 HF modem implementation | 🔨 In Progress |
+| [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem TCP server (ports 3998/3999) - headless wrapper for cross-modem testing | ✅ v1.0.5 |
+| [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper Linux, Crypto (KIK/TEK), VOACAP propagation | 🔨 Building |
+| [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project + Python scripts for FEMA region map generation | ✅ Active |
+| [**MARS-History-Project**](https://github.com/Alex-Pennington/MARS-History-Project) | SME Interview System - AI-powered knowledge capture (Flask/Claude/Google TTS) | ✅ v1.0.0 |
 
 ---
 
 ## Features
 
-- Full MIL-STD-188-110A implementation (all 12 waveform modes)
-- **Direct SDR receive** via SDRplay RSP2 Pro (I/Q input at 2 MSPS)
-- **WWV time signal detection** — tick, marker, and BCD time code decoding
-- MELP-e voice codec support (Codec2 open-source alternative included)
-- MS-DMT protocol compatibility for interoperability testing
-- Cross-modem validation using brain_core reference implementation
-- Advanced frequency correction and wideband AFC
-- Modular architecture for component reuse
+- **Full MIL-STD-188-110A implementation** — All 12 waveform modes (75-4800 bps) with turbo equalization
+- **Direct SDR receive** — SDRplay RSP2 Pro I/Q input at 2 MSPS with multi-stage decimation
+- **WWV time signal detection** — Tick, marker, and BCD time code decoding validates SDR chain
+- **Cross-modem interoperability** — 9/12 modes validated with brain_core (G4GUO) reference
+- **MELP-e voice codec support** — Codec2 open-source alternative included
+- **MARS operations tools** — CP (Communications Processor), Station Mapper, VOACAP propagation
+- **Advanced equalization** — 7 equalizers (DFE, MLSE, RLS, Turbo) for varying channel conditions
+- **Modular architecture** — 7 focused Phoenix SDR repos for reusability
+- **Knowledge capture** — AI-powered SME interview system for institutional history
+- **GIS mapping** — QGIS integration for FEMA region visualization
 
 ---
 
@@ -223,7 +226,7 @@ AGPL-3.0 for Phoenix SDR components. See LICENSE file in each repository for spe
 ## Acknowledgments
 
 - **Steve Hajducek (N2CKH)** — MS-DMT, MARS-ALE, Chief Navy MARS staff for ALE/MIL-STD development, introduction to this project space
-- **Charles Brain (G4GUO)** — brain_core reference implementation, PC-ALE
+- **Charles Brain (G4GUO)** — brain_core reference implementation, PC-ALE, cross-modem interoperability validation
 - **David Mills** — NTP driver36 architecture that inspired WWV detection design
 - The MARS community
 

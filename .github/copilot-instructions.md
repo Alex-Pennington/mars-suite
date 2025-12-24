@@ -13,6 +13,7 @@ This is a **documentation and coordination hub** for the Phoenix Nest MARS Commu
 | `pennington_m110a_demod` | Phoenix Nest MIL-STD-188-110A modem (all 12 modes) |
 | `phoenix_sdr` | SDRplay RSP2 Pro integration for I/Q capture |
 | `phoenix_sdr_control` | SDR control GUI for Windows (tuning, gain, filters) |
+| `hf-modem-rpi4` | Raspberry Pi 4 HF modem implementation |
 | `brain_core` | Charles Brain's Cm110s modem wrapped as TCP server (reference) |
 | `phoenix_nest_mars` | MARS operations suite (under development) |
 | `MARS_GIS` | QGIS project for FEMA region maps |
