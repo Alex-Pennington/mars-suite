@@ -1,0 +1,23 @@
+# Local Claude Code state. `.claude/*` rather than `.claude/`: git never
+# descends into an excluded directory, so a negation inside one never matches.
+# settings.json is tracked so its rules reach every worktree; settings.local.json,
+# session worktrees and local agent state stay out of git, where `git add` would
+# otherwise embed a worktree as a nested repository.
+.claude/*
+!.claude/settings.json
+
+# Claude Code resume note
+notes.txt
+
+# Secrets. Never commit them.
+.env
+.env.*
+*.key
+*.pem
+
+# Editor and OS noise
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store

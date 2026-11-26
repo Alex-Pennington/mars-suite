@@ -1,0 +1,4 @@
+[submodule ".ai-rules"]
+	path = .ai-rules
+	url = https://github.com/Alex-Pennington/greybeard-ai-rules
+	branch = project/mars-suite
