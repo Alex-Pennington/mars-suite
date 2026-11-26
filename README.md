@@ -45,7 +45,7 @@ Earlier public repositories from this project:
 - [phoenix_sdr](https://github.com/Alex-Pennington/phoenix_sdr): original SDR monolith, archived and split into the phoenix-* repos below
 - [phoenix-kiss-fft](https://github.com/Alex-Pennington/phoenix-kiss-fft): FFT library for signal processing
 - [phoenix-sdr-core](https://github.com/Alex-Pennington/phoenix-sdr-core): SDRplay hardware interface, decimation, TCP control
-- [phoenix-waterfall](https://github.com/Alex-Pennington/phoenix-waterfall): SDL2 waterfall display with WWV detection
+- [phoenix-waterfall](https://github.com/Alex-Pennington/phoenix-waterfall): SDL2 waterfall display
 - [phoenix-wwv](https://github.com/Alex-Pennington/phoenix-wwv): WWV detection library (tick, marker, BCD decoding)
 - [phoenix-sdr-net](https://github.com/Alex-Pennington/phoenix-sdr-net): network streaming of I/Q data
 - [phoenix-sdr-utils](https://github.com/Alex-Pennington/phoenix-sdr-utils): SDR utilities (I/Q playback, WWV analysis, telemetry logging)
