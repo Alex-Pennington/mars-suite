@@ -90,7 +90,6 @@ The Phoenix SDR system has been split into focused, modular repositories:
 |------------|-------------|--------|
 | [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes (75-4800 bps), turbo EQ, SDR I/Q input, cross-modem validated | ✅ v1.6.1 b325 |
 | [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | 🗄️ ARCHIVED - Monolith split into 7 modular repos (see phoenix-* above) | 📦 v0.3.0 |
-| [**hf-modem-rpi4**](https://github.com/Alex-Pennington/hf-modem-rpi4) | Raspberry Pi 4 HF modem implementation | 🔨 In Progress |
 | [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem TCP server (ports 3998/3999) - headless wrapper for cross-modem testing | ✅ v1.0.5 |
 | [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper Linux, Crypto (KIK/TEK), VOACAP propagation | 🔨 Building |
 | [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project + Python scripts for FEMA region map generation | ✅ Active |
