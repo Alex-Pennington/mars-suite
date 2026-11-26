@@ -27,73 +27,31 @@ The Phoenix Nest MARS Suite is an open-source implementation of MIL-STD-188-110A
 
 ---
 
-## Phoenix SDR Repositories
+## Repositories
 
-The Phoenix SDR system has been split into focused, modular repositories:
-
-| Repository | Description | Status |
-|------------|-------------|--------|
-| [**phoenix-kiss-fft**](https://github.com/Alex-Pennington/phoenix-kiss-fft) | FFT library for signal processing | ✅ v0.1.0 |
-| [**phoenix-reference-library**](https://github.com/Alex-Pennington/phoenix-reference-library) | Technical documentation (WWV specs, NTP driver36) | ✅ v0.1.0 |
-| [**phoenix-sdr-core**](https://github.com/Alex-Pennington/phoenix-sdr-core) | SDRplay RSP2 Pro hardware interface, decimation, TCP control | ✅ v0.1.0 |
-| [**phoenix-waterfall**](https://github.com/Alex-Pennington/phoenix-waterfall) | SDL2 waterfall display with WWV detection | ✅ v0.1.0 |
-| [**phoenix-wwv**](https://github.com/Alex-Pennington/phoenix-wwv) | WWV detection library (tick, marker, BCD decoding) | ✅ v0.1.0 |
-| [**phoenix-sdr-net**](https://github.com/Alex-Pennington/phoenix-sdr-net) | Network streaming (sdr_server, signal_relay, splitter) | ✅ v0.1.0 |
-| [**phoenix-sdr-utils**](https://github.com/Alex-Pennington/phoenix-sdr-utils) | Utilities (iqr_play, wwv_analyze, telem_logger) | ✅ v0.1.0 |
-
-### Architecture Overview
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                        Phoenix Nest MARS Suite                               │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   ┌─────────────────┐                                                       │
-│   │  phoenix-kiss-  │  FFT library (dependency for all signal processing)  │
-│   │      fft        │                                                       │
-│   └────────┬────────┘                                                       │
-│            │                                                                │
-│   ┌────────┴────────┐                                                       │
-│   │ phoenix-sdr-    │  SDRplay hardware interface                          │
-│   │     core        │  └─ Decimation, TCP control, I/Q streaming           │
-│   └────────┬────────┘                                                       │
-│            │                                                                │
-│   ┌────────┼────────────────────────────────┐                              │
-│   │        │                                │                              │
-│   ▼        ▼                                ▼                              │
-│ ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
-│ │   phoenix-   │  │   phoenix-   │  │   phoenix-   │                      │
-│ │  waterfall   │  │     wwv      │  │   sdr-net    │                      │
-│ │              │  │              │  │              │                      │
-│ │ SDL2 display │  │ Detection    │  │ TCP/UDP      │                      │
-│ │ + WWV detect │  │ library      │  │ streaming    │                      │
-│ └──────────────┘  └──────────────┘  └──────────────┘                      │
-│                                                                             │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │              phoenix-sdr-utils                    │                     │
-│   │  iqr_play, wwv_analyze, telem_logger, gps_time   │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │          phoenix-reference-library               │                     │
-│   │  Technical documentation, WWV specs, references  │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+| Repository | Description |
+|------------|-------------|
+| [**mars-suite**](https://github.com/Alex-Pennington/mars-suite) | Public home of the suite. Ask every question, modem questions included, in [mars-suite issues](https://github.com/Alex-Pennington/mars-suite/issues). Releases will be published here. |
+| [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | Message core: Communications Processor (message handling), Station Mapper Linux, and VOACAP-based propagation prediction. The appliance code is on branch [`feat/appliance-core`](https://github.com/Alex-Pennington/phoenix_nest_mars/tree/feat/appliance-core). |
 
 ---
 
-## Other MARS Repositories
+## Earlier work
 
-| Repository | Description | Status |
-|------------|-------------|--------|
-| [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes (75-4800 bps), turbo EQ, SDR I/Q input, cross-modem validated | ✅ v1.6.1 b325 |
-| [**phoenix_sdr**](https://github.com/Alex-Pennington/phoenix_sdr) | 🗄️ ARCHIVED - Monolith split into 7 modular repos (see phoenix-* above) | 📦 v0.3.0 |
-| [**brain_core**](https://github.com/Alex-Pennington/brain_core) | Charles Brain (G4GUO) modem TCP server (ports 3998/3999) - headless wrapper for cross-modem testing | ✅ v1.0.5 |
-| [**phoenix_nest_mars**](https://github.com/Alex-Pennington/phoenix_nest_mars) | MARS ops suite: CP, Station Mapper Linux, Crypto (KIK/TEK), VOACAP propagation | 🔨 Building |
-| [**MARS_GIS**](https://github.com/Alex-Pennington/MARS_GIS) | QGIS project + Python scripts for FEMA region map generation | ✅ Active |
-| [**MARS-History-Project**](https://github.com/Alex-Pennington/MARS-History-Project) | SME Interview System - AI-powered knowledge capture (Flask/Claude/Google TTS) | ✅ v1.0.0 |
+Earlier public repositories from this project:
+
+- [pennington_m110a_demod](https://github.com/Alex-Pennington/pennington_m110a_demod): MIL-STD-188-110A HF modem
+- [brain_core](https://github.com/Alex-Pennington/brain_core): TCP wrapper around the Brain reference modem, for cross-modem testing
+- [phoenix_sdr](https://github.com/Alex-Pennington/phoenix_sdr): original SDR monolith, archived and split into the phoenix-* repos below
+- [phoenix-kiss-fft](https://github.com/Alex-Pennington/phoenix-kiss-fft): FFT library for signal processing
+- [phoenix-sdr-core](https://github.com/Alex-Pennington/phoenix-sdr-core): SDRplay hardware interface, decimation, TCP control
+- [phoenix-waterfall](https://github.com/Alex-Pennington/phoenix-waterfall): SDL2 waterfall display with WWV detection
+- [phoenix-wwv](https://github.com/Alex-Pennington/phoenix-wwv): WWV detection library (tick, marker, BCD decoding)
+- [phoenix-sdr-net](https://github.com/Alex-Pennington/phoenix-sdr-net): network streaming of I/Q data
+- [phoenix-sdr-utils](https://github.com/Alex-Pennington/phoenix-sdr-utils): SDR utilities (I/Q playback, WWV analysis, telemetry logging)
+- [phoenix-reference-library](https://github.com/Alex-Pennington/phoenix-reference-library): technical documentation (WWV specs, NTP driver36)
+- [MARS_GIS](https://github.com/Alex-Pennington/MARS_GIS): QGIS project and Python scripts for FEMA region maps
+- [MARS-History-Project](https://github.com/Alex-Pennington/MARS-History-Project): SME interview system for knowledge capture
 
 ---
 
@@ -157,10 +115,8 @@ Want to help test? See the [Beta Testing Guide](https://github.com/Alex-Penningt
 
 | Document | Description |
 |----------|-------------|
-| [Modem README](https://github.com/Alex-Pennington/pennington_m110a_demod/blob/master/README.md) | Main modem documentation |
-| [SDR Core README](https://github.com/Alex-Pennington/phoenix-sdr-core/blob/main/README.md) | SDRplay integration docs |
-| [WWV Detection](https://github.com/Alex-Pennington/phoenix-wwv/blob/main/README.md) | WWV detection library |
-| [Reference Library](https://github.com/Alex-Pennington/phoenix-reference-library/blob/main/README.md) | Technical documentation |
+| [phoenix_nest_mars README](https://github.com/Alex-Pennington/phoenix_nest_mars/blob/main/README.md) | Message core documentation |
+| [mars-suite issues](https://github.com/Alex-Pennington/mars-suite/issues) | Questions and support |
 
 ---
 
