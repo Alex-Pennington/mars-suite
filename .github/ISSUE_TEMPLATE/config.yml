@@ -2,4 +2,4 @@ blank_issues_enabled: false
 contact_links:
   - name: Beta Operations Plan & Tester Requirements
     url: https://github.com/Alex-Pennington/mars-suite/blob/main/docs/BETA_OPS_PLAN.md
-    about: Review the SOP before submitting issues. Incomplete reports will be closed.
+    about: First time here? Welcome. Please skim the plan before filing; we may ask follow-up questions if a report is missing details.

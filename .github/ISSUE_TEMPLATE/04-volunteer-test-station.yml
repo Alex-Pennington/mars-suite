@@ -1,0 +1,27 @@
+name: "Volunteer test station"
+description: "Offer your station for testing. Alex follows up privately."
+title: "VOLUNTEER: "
+labels: ["volunteer"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > This issue is public. Do not post frequencies, schedules, location or keys. Alex follows up privately.
+
+  - type: input
+    id: call-sign
+    attributes:
+      label: "Call sign"
+      placeholder: "N0CALL"
+    validations:
+      required: true
+
+  - type: input
+    id: radio-model
+    attributes:
+      label: "Radio model"
+      placeholder: "Make and model"
+    validations:
+      required: true

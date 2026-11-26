@@ -86,6 +86,8 @@ The Phoenix SDR system has been split into focused, modular repositories:
 
 ## Other MARS Repositories
 
+> **Modem-only questions** (MIL-STD-188-110A waveforms, demodulation, modem builds) go to [pennington_m110a_demod](https://github.com/Alex-Pennington/pennington_m110a_demod/issues), not here.
+
 | Repository | Description | Status |
 |------------|-------------|--------|
 | [**pennington_m110a_demod**](https://github.com/Alex-Pennington/pennington_m110a_demod) | MIL-STD-188-110A HF modem - all 12 modes (75-4800 bps), turbo EQ, SDR I/Q input, cross-modem validated | ✅ v1.6.1 b325 |
