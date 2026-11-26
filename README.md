@@ -40,6 +40,10 @@ The Phoenix SDR system has been split into focused, modular repositories:
 | [**phoenix-wwv**](https://github.com/Alex-Pennington/phoenix-wwv) | WWV detection library (tick, marker, BCD decoding) | ✅ v0.1.0 |
 | [**phoenix-sdr-net**](https://github.com/Alex-Pennington/phoenix-sdr-net) | Network streaming (sdr_server, signal_relay, splitter) | ✅ v0.1.0 |
 | [**phoenix-sdr-utils**](https://github.com/Alex-Pennington/phoenix-sdr-utils) | Utilities (iqr_play, wwv_analyze, telem_logger) | ✅ v0.1.0 |
+| [**phoenix-dsp**](https://github.com/Alex-Pennington/phoenix-dsp) | Shared DSP primitives (lowpass, DC block, AM demodulator, decimation) | v0.1.0, no release |
+| [**phoenix-discovery**](https://github.com/Alex-Pennington/phoenix-discovery) | UDP broadcast service discovery for Phoenix Nest SDR programs | No release |
+| [**phoenix-signal-relay**](https://github.com/Alex-Pennington/phoenix-signal-relay) | Relay server for Phoenix SDR remote access (I/Q fan-out to remote clients, SDR control relay) | ✅ v0.1.0 |
+| [**phoenix-build-scripts**](https://github.com/Alex-Pennington/phoenix-build-scripts) | Reusable build system for Phoenix SDR projects (CMake presets, version management, release deployment) | v1.0.0, no release |
 
 ### Architecture Overview
 
